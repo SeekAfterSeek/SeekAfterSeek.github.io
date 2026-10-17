@@ -563,11 +563,22 @@
     location.reload();
   }
 
+  /* 出厂默认密码的指纹（data/auth.js 初始值）。改过密码后就不再提示默认密码了。 */
+  var DEFAULT_HASH = 'ZXZ/DMNTEM3bbGJuPlajloBaM65jlkqVOORgQ78xAik=';
+
   function bindGate() {
     var form = $('#gate-form');
     var err = $('#gate-err');
     var pw = $('#pw');
     var submit = $('#gate-submit');
+
+    // 密码已经不是默认值（或没有密码文件）时，隐藏「默认密码是 portfolio-2026」的提示，
+    // 免得把已经失效的密码写在公开页面上。
+    var hint = $('#gate-hint');
+    var cfgNow = currentAuth();
+    if (hint && (!cfgNow || cfgNow.hash !== DEFAULT_HASH || localStorage.getItem(KEY.auth))) {
+      hint.hidden = true;
+    }
 
     $('#toggle-pw').addEventListener('click', function () {
       var showing = pw.type === 'text';
