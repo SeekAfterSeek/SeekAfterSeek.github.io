@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>控制台 — 作品集</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<!-- ============ 登录门 ============ -->
+<div class="gate" id="gate">
+  <form class="gate-card" id="gate-form" autocomplete="off" novalidate>
+    <div class="gate-mark" aria-hidden="true">◐</div>
+    <h1>作品集控制台</h1>
+    <p class="gate-sub">输入访问密码。密码只负责打开这个编辑界面，真正的发布权限在 GitHub。</p>
+
+    <label class="gate-field">
+      <span>访问密码</span>
+      <input type="password" id="pw" autocomplete="current-password" placeholder="输入访问密码" required>
+    </label>
+
+    <div class="gate-row">
+      <label class="chk"><input type="checkbox" id="remember"> <span>记住这台设备 7 天</span></label>
+      <button type="button" class="linkbtn" id="toggle-pw">显示密码</button>
+    </div>
+
+    <p class="gate-err" id="gate-err" role="alert"></p>
+    <button class="btn primary block" type="submit" id="gate-submit">进入控制台</button>
+
+    <p class="gate-hint">第一次使用？默认密码是 <code>portfolio-2026</code>，登录后请立刻到「账号与发布」改成自己的。</p>
+    <a class="gate-back" href="index.html">← 返回网站</a>
+  </form>
+</div>
+
+<!-- ============ 控制台 ============ -->
+<div class="app" id="app" hidden>
+  <header class="topbar">
+    <div class="tb-left">
+      <span class="mark" aria-hidden="true">◐</span>
+      <b>作品集控制台</b>
+      <span class="pill" id="status">已同步</span>
+    </div>
+    <div class="tb-right">
+      <button class="btn sm ghost" id="btn-site" type="button">打开网站</button>
+      <button class="btn sm ghost" id="btn-preview" type="button" aria-pressed="true">预览</button>
+      <button class="btn sm" id="btn-draft" type="button">保存草稿</button>
+      <button class="btn sm primary" id="btn-publish" type="button">发布</button>
+    </div>
+  </header>
+
+  <div class="layout" id="layout">
+    <nav class="rail" id="rail" aria-label="编辑分区"></nav>
+    <main class="editor" id="editor"></main>
+    <aside class="preview" id="previewPane">
+      <div class="pv-bar">
+        <span class="pv-title">实时预览</span>
+        <div class="pv-sizes" id="pvSizes">
+          <button type="button" data-size="100%" class="on">桌面</button>
+          <button type="button" data-size="820px">平板</button>
+          <button type="button" data-size="390px">手机</button>
+        </div>
+        <button type="button" class="ibtn" id="btn-reload-pv" title="重新加载预览" aria-label="重新加载预览">⟳</button>
+      </div>
+      <div class="pv-stage" id="pvStage">
+        <div class="pv-holder" id="pvHolder">
+          <iframe id="pv" src="index.html?preview=1" title="网站预览"></iframe>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<input type="file" id="file-pick" accept="image/*" hidden>
+<input type="file" id="import-pick" accept=".json,.js,application/json,text/javascript" hidden>
+
+<script src="assets/js/core.js"></script>
+<script src="data/content.js"></script>
+<script src="data/auth.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

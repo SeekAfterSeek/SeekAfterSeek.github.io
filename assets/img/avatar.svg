@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img" aria-label="头像占位图">
+  <defs>
+    <linearGradient id="ag" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe6d8"/>
+      <stop offset="1" stop-color="#d3c1a7"/>
+    </linearGradient>
+    <filter id="an">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="900" height="900" fill="url(#ag)"/>
+  <circle cx="450" cy="330" r="150" fill="#2a2118" opacity="0.18"/>
+  <path d="M170 900c0-170 125-280 280-280s280 110 280 280z" fill="#2a2118" opacity="0.18"/>
+  <rect width="900" height="900" filter="url(#an)" opacity="0.05"/>
+  <text x="450" y="855" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#2a2118" opacity="0.4" letter-spacing="8">AVATAR</text>
+</svg>

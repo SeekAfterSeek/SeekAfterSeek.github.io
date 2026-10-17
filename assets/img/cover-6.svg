@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="项目封面占位图 06">
+  <defs>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe4c8"/>
+      <stop offset="1" stop-color="#c6b276"/>
+    </linearGradient>
+    <filter id="n5">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="c5"><rect width="1200" height="900" rx="0"/></clipPath>
+  </defs>
+  <g clip-path="url(#c5)">
+    <rect width="1200" height="900" fill="url(#g5)"/>
+    <circle cx="890" cy="250" r="200" fill="#ffffff" opacity="0.26"/>
+    <rect x="0" y="640" width="1200" height="1" fill="#262112" opacity="0.14"/>
+    <g stroke="#262112" stroke-opacity="0.1" stroke-width="1">
+      <line x1="300" y1="0" x2="300" y2="900"/>
+      <line x1="600" y1="0" x2="600" y2="900"/>
+      <line x1="900" y1="0" x2="900" y2="900"/>
+    </g>
+    <text x="64" y="812" font-family="Georgia, 'Times New Roman', serif" font-size="168" fill="#262112" fill-opacity="0.5">06</text>
+    <text x="1140" y="120" text-anchor="end" font-family="ui-monospace, Consolas, monospace" font-size="22" letter-spacing="6" fill="#262112" fill-opacity="0.42">WORK / 06</text>
+    <rect width="1200" height="900" filter="url(#n5)" opacity="0.055"/>
+  </g>
+</svg>
